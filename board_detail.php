@@ -27,10 +27,10 @@
 				if($row = mysqli_fetch_array($result)) {
 			?>
 			<tr>
-				<td>작성자</td>
+				<td>글번호</td>
 				<td>
 					<?php
-						echo $row["userID"];
+						echo $row["BID"];
 					?>
 				</td>
 			</tr>
@@ -41,10 +41,10 @@
 						echo $row["BTitle"];
 					?>
 				</td>
-				<td>글번호</td>
+				<td> 작성자</td>
 				<td>
 					<?php
-						echo $row["BID"];
+						echo $row["userID"];
 					?>
 				</td>
 				<td>작성일</td>
@@ -66,8 +66,10 @@
 			?>
 		</table>
 		<br>
-		<div style="display:flex">
-		<a class="btn btn-primary" href="/board.php?currentPage=1" style="height:38px">Prev</a>
+		<div style="display:flex;height:38px">
+
+		<a class="btn btn-primary" href="/board.php?currentPage=1" style="padding-left:10px">Prev</a>
+		<a class="btn btn-primary" href="/update.php?no='"<?php echo $no ?>"'" style="margin-left:10px">Edit</a>
 		<form action="/delete_action.php" method="post" style="margin-left:10px">
 			<button class="btn btn-primary" name="no" value="<?php echo $no ?>" type="submit">Delete
 		</form>
